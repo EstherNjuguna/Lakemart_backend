@@ -5,7 +5,7 @@ class CreateUsers < ActiveRecord::Migration[7.0]
       t.string :email
       t.string :password_digest
       t.string :picture
-      t.integer :type
+      t.integer :user_type, default: 0
 
       t.timestamps
     end
