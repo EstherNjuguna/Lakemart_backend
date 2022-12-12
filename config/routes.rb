@@ -5,4 +5,5 @@ Rails.application.routes.draw do
   # root "articles#index"
   #Authentication
   post 'authentication/register', to: "authentication#create"
+  post 'authentication/login', to: "authentication#login"
 end

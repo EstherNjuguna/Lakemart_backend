@@ -8,6 +8,12 @@ class AuthenticationController < ApplicationController
     end
 end
     def login
+       user =User.find_by(email: params[:email])
+       if user&.authenticate(params[:password])
+        appresponse(status_code: 200,message: "Log in Succesful", body:user )
+       else
+        appresponse(status_code: 401, message: "Invalid user") 
+       end
     end
     private
     def user_params
