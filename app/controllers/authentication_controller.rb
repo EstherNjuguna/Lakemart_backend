@@ -17,7 +17,7 @@ end
         appresponse(status_code: 401, message: "Invalid user") 
        end
     end
-    def logout_account
+    def logout
         delete_user_session
         appresponse(status_code: 200, message: "Log out successfully")
     end
