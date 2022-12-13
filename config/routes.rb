@@ -9,5 +9,7 @@ Rails.application.routes.draw do
   post 'authentication/login', to: "authentication#login"
 #Product
 post "/products/create" , to: "products#create"
-
+get "/products"  , to: "products#list_product"
+put "/products/:product_id/update" , to: "products#update"
+delete "/products/:product_id/destroy" , to: "products#delete"
 end
