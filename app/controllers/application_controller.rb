@@ -10,4 +10,10 @@ class ApplicationController < ActionController::API
         },status: status_code
     
     end
+    def authorize
+        return appresponse(status_code: 401, message: "You are unauthorized") unless session.include? :user_id
+    end
+    def authorize_seller
+        return appresponse(status_code: 401, message:"cannot perform action" ) unless session[:user_type] == "seller" || session[:user_type] =="admin"
+end
 end
